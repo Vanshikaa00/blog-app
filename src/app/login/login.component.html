@@ -1,0 +1,49 @@
+<div class="row container-fluid">
+  <!--side bar image starts-->
+  <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 padding-0 ">
+    <img src="../../assets/images/loginimg.jpg" class="c1">
+  </div>
+  <!--side bar image ends-->
+  <!--side bar login form starts-->
+  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 padding-0 c2 ">
+    <div class="container p-5">
+      <!--heading starts-->
+      <div class="bg-light text-secondary container text-center c3 py-3">Account Login</div>
+      <!--heading ends-->
+      <!--form starts-->
+      <div class="container bg-light pt-4 pb-5">
+        <form  >
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="email" class="form-control " id="email" placeholder="email or username" name="username" [(ngModel)]="username" required>
+              <div class="invalid-feedback">
+                Please provide a valid email or username
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+
+            <div class="col-sm-10 mx-auto">
+              <input type="password" class="form-control " id="password" placeholder="password" name="password" [(ngModel)]="password" required>
+              <div class="invalid-feedback">
+                Please provide a valid password
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-3">
+            <a routerLink="/signup">Don't have an account? Click here to create a new one</a>
+          </div>
+
+
+          <div class="text-center">
+            <button class="btn btn-primary mt-3" type="button" (click)="login()">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!--form ends-->
+    </div>
+  </div>
+</div>
+<!--side bar login form ends-->

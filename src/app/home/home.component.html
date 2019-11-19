@@ -1,0 +1,128 @@
+<html>
+<body>
+<app-navbar></app-navbar>
+
+<nav>
+  <label for="drop" class="toggle">Menu</label>
+  <input type="checkbox" id="drop"/>
+  <ul class="menu" style="float:left;">
+    <li>
+      <a routerLink="/home" class="paddingnavbar">Home</a>
+    </li>
+
+    <li>
+      <a routerLink="/add-blog" class="paddingnavbar">Create Blog</a>
+    </li>
+
+    <li>
+      <a routerLink="/blog-list" class="paddingnavbar">Explore more blogs</a>
+    </li>
+
+    <li>
+      <a routerLink="/all-users" class="paddingnavbar">Find more users</a>
+    </li>
+
+    <!--    <li >-->
+    <!--      &lt;!&ndash; First Tier Drop Down &ndash;&gt;-->
+    <!--      <label for="drop-1" class="toggle">Categories</label>-->
+    <!--      <a href="#"  class="paddingnavbar">Categories</a>-->
+    <!--      <input type="checkbox" id="drop-1"/>-->
+    <!--      <ul >-->
+    <!--        <li><a href="#">Fashion</a></li>-->
+    <!--        <li><a href="#">Technology</a></li>-->
+    <!--        <li><a href="#">Food</a></li>-->
+    <!--      </ul>-->
+    <!--    </li>-->
+
+    <li><a routerLink="/my-profile" class="paddingnavbar">View Profile</a></li>
+  </ul>
+</nav>
+<hr/>
+<!--hero image-->
+<div class="container-fluid p-5 backimg">
+  <div class="container p-5">
+    <div class="hero-text p-5">What are you looking for?</div>
+    <div class="container">
+      <div id="content">
+        <form class='form-inline'>
+          <div class="input-group">
+            <input type="text" id="search" name="search" class="form-control search-form"
+                   placeholder="Enter blog category, name or blog author name..." >
+            <span class="input-group-btn" style="width:39px">
+              <button id="search-this" type="submit"  class="pull-right btn btn-default search-btn">
+                  <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--blog content starts-->
+<div class="container-fluid ">
+  <div class="row">
+    <!--firt column categories starts-->
+    <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3 p-5 vt" id="categoriess">
+    </div>
+    <!--first column categories ends-->
+
+    <!--second column content starts-->
+    <div class="col-sm-6 p-5 border-left border-right">
+      <div class="container ">
+        <div *ngFor="let blo of blog">
+          <div *ngFor="let b of followers ">
+          <div *ngIf="b.user1.userid == blo.users.userid">
+            <div class="row">
+
+              <div class="col-sm-3 p-3 ">
+                <img class="blogimg" src="{{blo.blogimage}}">
+              </div>
+
+              <div class="col-sm-9 p-3 ">
+                <div class="m-2 "><span class="blogfont">Blog name: <span
+                  class="blogfont2">{{blo.blogname}}</span></span></div>
+                <div class="m-2 "><span class="blogfont">Blog owner name: <span
+                  class="blogfont2">{{blo.blogowner}}</span></span></div>
+
+                <div class="m-2 "><div *ngIf="blo.blogstatus==0"><span class="blogfont">
+                  Blog status: <span class="blogfont2">Public</span>
+                </span></div></div>
+
+                <div class="m-2 "><div *ngIf="blo.blogstatus==1"><span class="blogfont">
+                  Blog status: <span class="blogfont2">Private</span>
+                </span></div></div>
+
+                <div class="m-2 "><span class="blogfont">Created on: <span class="blogfont2">{{blo.date}}</span></span>
+                </div>
+                <div class="m-2 "><span class="blogfont">Category: <span
+                  class="blogfont2">{{blo.blogcategory}}</span></span></div>
+                <div class="m-2 ">
+                  <button type="button" class="btn btn-outline-primary mr-1 mt-1" (click)="readBlog(blo.blogid)">Read Blog
+                  </button>
+<!--                  <button type="button" class="btn btn-outline-primary  mt-1">Subscribe</button>-->
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <hr/>
+
+
+    </div>
+
+    <!--second column content ends-->
+    <!--third column content starts-->
+    <div class="col-sm-3 p-5 border-right">
+    </div>
+    <!--third column content ends-->
+    <!--blog content ends-->
+  </div>
+</div>
+<app-footer></app-footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<!--navbar starts-->
+<div class="container-fluid p-2">
+  <div class="text-right" style="display: flex;justify-content: space-between;">
+    <div class="bg-danger text-right"></div>
+    <div style="display: flex;">
+      <div class="text-right mx-2 p-3"><a routerLink="/home" class="c1">Home </a></div>
+      <div class="mx-2 p-3"><a routerLink="/add-blog" class="c1">Create Blog </a></div>
+      <div class="mx-2 p-3"><a routerLink="/blog-list" class="c1">Explore more blogs</a></div>
+      <div class="mx-2 p-3"><a routerLink="/all-users" class="c1">Find more Users</a></div>
+      <div class="mx-2 p-3"><a routerLink="/my-profile" class="c1">View Profile</a></div>
+    </div>
+  </div>
+</div>
+<hr/>
+<!--navbar ends-->
+<!--updating form starts-->
+
+<!--content starts-->
+<div class="container-fluid p-4 " style="background-color: white;">
+  <div class="container ">
+    <div class="text-left display-4 py-4">Create Blog</div>
+    <form>
+      <div class="form-group">
+        <label for="blogname">Blog Name:</label>
+        <input type="text" class="form-control" id="blogname" [(ngModel)]="blogs.blogname" value="{{blogs.blogname}}" name="blogname">
+      </div>
+      <div class="form-group">
+        <label for="blogowner">Blog Owner:</label>
+        <input type="text" class="form-control" id="blogowner" [(ngModel)]="blogs.blogowner" value="{{blogs.blogowner}}"  name="blogowner">
+      </div>
+
+      <div class="form-group">
+        <label for="blogcategory">Blog Category:</label>
+        <input type="text" class="form-control" id="blogcategory" [(ngModel)]="blogs.blogcategory" value="{{blogs.blogcategory}}"  name="blogcategory">
+      </div>
+
+      <div class="form-group">
+        <label for="blogimage">Blog image src:</label>
+        <input type="text" class="form-control" id="blogimage" [(ngModel)]="blogs.blogimage" value="{{blogs.blogimage}}" name="blogimage">
+      </div>
+
+<!--      <div class="form-group">-->
+<!--        <div>Blog status:</div>-->
+<!--        <div class="m-3" style="display: flex;">-->
+<!--          <div class="mx-3">Public</div>-->
+<!--          <div>-->
+<!--            <label class="switch">-->
+<!--              <input type="checkbox" name="blogstatus" [(ngModel)]="blogs.blogstatus" value="{{blogs.blogstatus}}">-->
+<!--              <span class="slider round"></span>-->
+<!--            </label>-->
+<!--          </div>-->
+<!--          <div class="mx-3">Private</div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="form-group">
+        <label for="blogcontent">Blog Content:</label>
+        <input type="text" class="form-control" id="blogcontent" [(ngModel)]="blogs.blogcontent" value="{{blogs.blogcontent}}" name="blogcontent">
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="editBlog()">Edit blog !</button>
+
+    </form>
+  </div>
+</div>
+<!--content ends-->
+<!--updating form ends-->

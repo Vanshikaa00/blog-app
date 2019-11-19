@@ -1,0 +1,74 @@
+<div class="row container-fluid">
+  <!--side bar image starts-->
+  <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 padding-0 ">
+    <img src="../../assets/images/signup.jpg" class="c1">
+  </div>
+  <!--side bar image ends-->
+  <!--side bar login form starts-->
+  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 padding-0 c2 ">
+    <div class="container p-5">
+      <!--heading starts-->
+      <div class="bg-light text-secondary container text-center c3 py-3">Sign Up</div>
+
+      <!--heading ends-->
+      <!--form starts-->
+      <div class="container bg-light pt-4 pb-5">
+        <form class="was-validated">
+
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="fname" class="form-control " id="fname" placeholder="First Name" name="fname" [(ngModel)]="fname" required>
+              <div class="invalid-feedback">
+                Please provide a valid first name
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="lname" class="form-control " id="lname" placeholder="Last Name" name="lname" [(ngModel)]="lname" required>
+              <div class="invalid-feedback">
+                Please provide a valid last name
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="phno" class="form-control " id="phno" placeholder="Phone Number" name="phno" [(ngModel)]="phno" required>
+              <div class="invalid-feedback">
+                Please provide a valid phone number
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="email" class="form-control " id="email" placeholder="email or username" name="name" [(ngModel)]="name" required>
+              <div class="invalid-feedback">
+                Please provide a valid email or username
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10 mx-auto">
+              <input type="password" class="form-control " id="password" placeholder="password" name="pass" [(ngModel)]="pass" required>
+              <div class="invalid-feedback">
+                Please provide a valid password
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center"><a routerLink="/login">Already have an account? Login here</a></div>
+
+          <div class="text-center" >
+            <button (click)="adduser()" class="btn btn-primary mt-3" type="submit">Create Account</button>
+          </div>
+        </form>
+      </div>
+      <!--form ends-->
+    </div>
+  </div>
+</div>
+<!--side bar login form ends-->

@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+
+
+<!--navbar starts-->
+<div class="container-fluid we p-2">
+  <div class="text-right" style="display: flex;justify-content: space-between;">
+    <div class="bg-danger text-right"></div>
+    <div style="display: flex;">
+      <div class="text-right mx-2 p-3"><a routerLink="/home" class="c1">Home </a></div>
+      <div class="mx-2 p-3"><a routerLink="/my-profile" class="c1">View Profile</a></div>
+      <div class="mx-2 p-3"><a routerLink="/add-blog" class="c1">Create Blog</a></div>
+      <div class="mx-2 p-3"><a routerLink="/all-users" class="c1">Find more Users</a></div>
+
+    </div>
+  </div>
+</div>
+<hr/>
+<!--navbar ends-->
+
+<!--blog content starts-->
+<div class="container-fluid ">
+  <div class="row">
+    <!--left column categories starts-->
+    <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3 p-5 vt" id="categoriess">
+      <div class="container">
+        <div class="text-left  leftcolheading py-3 text-dark" >CATEGORIES</div>
+        <div class="pt-3 pb-5">
+
+          <label class="container radiocontainer">Fashion
+            <input type="radio" name="radio" (click)="showFashion()">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container radiocontainer">Technology
+            <input type="radio" name="radio" (click)="showTechnology()">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container radiocontainer">Food
+            <input type="radio" name="radio"(click)="showFood()">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container radiocontainer">Travel
+            <input type="radio" name="radio"(click)="showTravel()">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+      </div>
+    </div>
+    <!--left column categories ends-->
+
+    <!--right column content starts-->
+    <div class="col-sm-9 col-xs-9 col-md-9 col-lg-9 p-5 border-left">
+      <div class="container ">
+        <div *ngFor="let blo of blog | orderBy:'-date'">
+          <div *ngIf="blo.blogstatus == 0">
+        <div class="row">
+
+          <div class="col-sm-3 p-3 ">
+            <img class="blogimg" src="{{blo.blogimage}}">
+          </div>
+
+          <div class="col-sm-9 p-3 ">
+            <div class="m-2 "><span class="blogfont">Blog name: <span class="blogfont2">{{blo.blogname}}</span></span></div>
+            <div class="m-2 "><span class="blogfont">Blog owner name: <span class="blogfont2">{{blo.blogowner}}</span></span></div>
+            <div class="m-2 "><span class="blogfont">Created on: <span class="blogfont2">{{blo.date}}</span></span></div>
+            <div class="m-2 "><span class="blogfont">Blog Status: <span *ngIf="blo.blogstatus==0" class="blogfont2">Public</span></span></div>
+            <div class="m-2 "><span class="blogfont">Category: <span class="blogfont2">{{blo.blogcategory}}</span></span></div>
+            <div class="m-2 ">
+              <button type="button" class="btn btn-outline-primary mr-1 mt-1" (click)="readBlog(blo.blogid)">Read Blog</button>
+            </div>
+          </div>
+
+        </div>
+          </div>
+        </div>
+      </div>
+      <hr/>
+
+
+    </div>
+
+    <!--right column content ends-->
+
+
+  </div>
+</div>
+<!--blog content ends-->

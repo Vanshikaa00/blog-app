@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<!--navbar starts-->
+<div class="container-fluid p-2">
+  <div class="text-right" style="display: flex;justify-content: space-between;">
+    <div class="bg-danger text-right"></div>
+    <div style="display: flex;">
+      <div class="text-right mx-2 p-3"><a routerLink="/home" class="c1">Home </a></div>
+      <div class="mx-2 p-3"><a routerLink="/add-blog" class="c1">Create Blog </a></div>
+      <div class="mx-2 p-3"><a routerLink="/blog-list" class="c1">Explore more blogs</a></div>
+      <div class="mx-2 p-3"><a routerLink="/my-profile" class="c1">View Profile</a></div>
+
+    </div>
+  </div>
+</div>
+<hr/>
+<!--navbar ends-->
+<!--users to follow starts-->
+<div class="p-2 display-4 text-center mb-3">Users to follow</div>
+<div class="container">
+  <table class="table table-bordered">
+    <tr *ngFor="let u of users">
+      <td>
+        <div class="text-center">{{u.username}}</div>
+        <div class="text-center m-2">
+          <button class="mr-3 btn btn-primary" (click)="follower(u.userid)" >Follow</button>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</div>
+<!--users to follow ends-->

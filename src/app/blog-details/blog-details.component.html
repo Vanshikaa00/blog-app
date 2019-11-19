@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<!--navbar starts-->
+<div class="container-fluid p-2">
+  <div class="text-right" style="display: flex;justify-content: space-between;">
+    <div class="bg-danger text-right"></div>
+    <div style="display: flex;">
+      <div class="text-right mx-2 p-3"><a routerLink="/home" class="c1">Home </a></div>
+      <div class="mx-2 p-3"><a routerLink="/add-blog" class="c1">Create Blog </a></div>
+      <div class="mx-2 p-3"><a routerLink="/my-profile" class="c1">View Profile</a></div>
+      <div class="mx-2 p-3"><a routerLink="/home" class="c1">Explore more blogs</a></div>
+    </div>
+  </div>
+</div>
+<hr/>
+<!--navbar ends-->
+<!--content starts-->
+<div class="container-fluid p-4" style="background-color: white;">
+  <div class="row">
+  <div class="container">
+    <div>
+
+      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 m-3">
+        <div class="bg-secondary">
+          <div class="container text-center">
+         <img class="imgsize" src="{{blogs.blogimage}}"/>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 m-3">
+      <div class="text-center display-4">{{blogs.blogname}}</div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 m-3">
+      <div class=" text-center display-5 p-2">Written by: {{blogs.blogowner}}</div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 m-3" style="display: flex;justify-content: space-between;">
+      <div class="text-center display-5 pr-3">Blog Category: {{blogs.blogcategory}}</div>
+      <div class="text-center display-5 p-3">Created on: {{blogs.date}}</div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 m-3">
+      <div *ngIf="blogs.blogstatus == 0"><div class="p-1">Status : Public</div></div>
+      <div *ngIf="blogs.blogstatus == 1"><div class="p-1">Status : Private</div></div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 m-3">
+      <div  style="justify-content:center;">
+        {{blogs.blogcontent}}
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-center m-4" >
+     <button type="button" class="btn btn-outline-primary" routerLink="/blog-list">Go back</button>
+    </div>
+
+
+    </div>
+  </div>
+</div>
+  </div>
+
+<!--content ends-->
+<!--comment secttion starts-->
+
+<!--comment section ends-->
+<app-footer></app-footer>

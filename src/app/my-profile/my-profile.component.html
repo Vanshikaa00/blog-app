@@ -1,0 +1,139 @@
+<app-navbar></app-navbar>
+<!--navbar starts-->
+<div class="container-fluid p-2">
+  <div class="text-right" style="display: flex;justify-content: space-between;">
+    <div class="bg-danger text-right"></div>
+    <div style="display: flex;">
+      <div class="text-right mx-2 p-3"><a routerLink="/home" class="c1">Home </a></div>
+      <div class="mx-2 p-3"><a routerLink="/add-blog" class="c1">Create Blog </a></div>
+      <div class="mx-2 p-3"><a routerLink="/blog-list" class="c1">Explore more blogs</a></div>
+      <div class="mx-2 p-3"><a routerLink="/all-users" class="c1">Find more Users</a></div>
+
+    </div>
+  </div>
+</div>
+<hr/>
+<!--navbar ends-->
+<!--content starts-->
+<!--profile table starts-->
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col-sm-5 " style="background-color: white;">
+
+      <div class="container">
+        <div class="p-2 display-4 text-center mb-3">My Profile</div>
+        <table class="table table-bordered mb-5" *ngIf="myp">
+          <thead>
+          <tr>
+            <th>Firstname</th>
+            <td><input type="text" name="fname" [(ngModel)]="myp.fname" value="{{myp.fname}}"></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th>Lastname</th>
+            <td><input type="text" name="lname" [(ngModel)]="myp.lname" value="{{myp.lname}}"></td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td><input type="text" name="phno" [(ngModel)]="myp.phno" value="{{myp.phno}}"></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" name="username" [(ngModel)]="myp.username" value="{{myp.username}}"></td>
+          </tr>
+          <tr>
+            <th>Follower</th>
+            <td>{{this.followerrz.length}}</td>
+          </tr>
+          <tr>
+            <th>Following</th>
+            <td>{{this.followers.length}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-center"><button class="btn btn-outline-primary" (click)="updateProfile()">
+              update profile</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+<!--profile table ends-->
+      <!--blogs created starts-->
+
+
+      <div class="text-center " style="font-size: xx-large;">Blogs created :</div>
+
+      <div class="m-3" *ngFor="let blo of blogsiwrote">
+        <div class="row">
+          <div class="col-sm-3 p-3 ">
+            <img class="blogimg" src="{{blo.blogimage}}">
+          </div>
+
+          <div class="col-sm-9 p-3 ">
+            <div class="m-2 "><span class="blogfont">Blog name: <span
+              class="blogfont2">{{blo.blogname}}</span></span></div>
+            <div class="m-2 "><span class="blogfont">Blog owner name: <span
+              class="blogfont2">{{blo.blogowner}}</span></span></div>
+            <div class="m-2 "><span class="blogfont">Created on: <span class="blogfont2">{{blo.date}}</span></span>
+            </div>
+            <div class="m-2 "><span class="blogfont">Category: <span
+              class="blogfont2">{{blo.blogcategory}}</span></span></div>
+            <div class="m-2 ">
+              <button type="button" class="btn btn-outline-primary mr-1 mt-1" (click)="deletingBlog(blo.blogid)">
+                Delete Blog
+              </button>
+              <button type="button" class="btn btn-outline-primary mr-1 mt-1" [routerLink]="['blog-update',blo.blogid]">
+                Update Blog
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--blogs created ends-->
+    </div>
+
+    <!--right column starts-->
+    <div class="col-sm-7 border-left" style="background-color: white;">
+      <div class="container">
+        <!--your own followers and following starts-->
+        <div class="p-2 display-4 text-center mb-3">Your followers & following</div>
+
+            <table class="table table-bordered">
+              <tr>
+                <th class="text-center">Follower</th>
+                <th class="text-center">Following</th>
+              </tr>
+              <tr>
+
+                <td>
+                  <div *ngFor="let f of followerrz">
+                  <div class="text-center">{{f.user2.username}}</div>
+                  <div class="text-center m-2">
+                    <button class="mr-3 btn btn-outline-primary" (click)="follower(f.user2.userid)">Follow</button>
+                  </div>
+                  </div>
+                </td>
+
+
+
+                <td>
+                  <div *ngFor="let follower of followers">
+                  <div class="text-center ">{{follower.user1.username}}</div>
+                  <div class="text-center m-2">
+                    <button class="mr-3 btn btn-outline-primary" (click)="unfollow(follower.fid)">Unfollow</button>
+                  </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <!--your followers and following ends-->
+
+      </div>
+    </div>
+    <!--right column ends-->
+
+
+  </div>
+</div>
+<!--content ends-->
+<app-footer></app-footer>
