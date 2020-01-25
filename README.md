@@ -1,27 +1,3 @@
-# BlogApp
+Hello! This a fullstack web application made using angular 7.0 as the frontend technology and spring boot as the backend technology.The backend technoloIn this webapp, the user can create,update and delete their own blogs ,follow blogs as per their interests , can view private blogs by following their favourite bloggers, update their profiles etc. Also the user can explore people to follow.Plus there's a follower and following count too. The blogs can be categorized / sorted as per user's interest and the latest blogs are shown at the top in the home feed
+![screencapture-localhost-4200-home-2020-01-23-21_00_55](https://user-images.githubusercontent.com/53425575/73003179-3318ca80-3e2b-11ea-8cf2-005d1e4a260a.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
